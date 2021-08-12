@@ -62,7 +62,7 @@ void imprimirPilha(Pilha *p){
     printf("%d\t",ptr->value);
     ptr = ptr->prox;
   }
-
+  printf("\n");
 }
 
 void liberaEspaco(Pilha *p){
@@ -89,6 +89,10 @@ int main(){
   empilhar(10,p1);
   empilhar(20,p1);
   empilhar(30,p1);
+
+  imprimirPilha(p1);
+
+  desempilhar(p1);
 
   imprimirPilha(p1);
 
