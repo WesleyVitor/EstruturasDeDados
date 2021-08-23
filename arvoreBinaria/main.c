@@ -104,6 +104,16 @@ void pesquisarElemento(TEEN *a1, int value){
   printf("%d não está presente na árvore!\n\n",value);
 }
 
+int somatorio(NO *root){
+    int subArvore1, subArvore2, soma = 0;
+    if(root != NULL){
+      subArvore1 = somatorio(root->direita);
+      subArvore2 = somatorio(root->esquerda);
+      soma = (root->value) + subArvore2 + subArvore1;
+      return soma;
+    }
+}
+
 
 int main(){ 
 
@@ -129,6 +139,7 @@ int main(){
 
   pesquisarElemento(a1, 207);
 
+  printf("%d\n",somatorio(a1->raiz));
 
   return 0;
 }
